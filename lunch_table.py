@@ -14,7 +14,7 @@ class LunchTable(CellAuto):
         super().__init__(num_rows, num_cols)
     
     def init_cell(self, coordinates):
-        # each cell is a (money, happiness, hunger)
+        # each cell is a (money, happiness, hunger) tuple
         return (0, 0, 0)
 
     def update_cell(self, coordinates, current_state, neighbor_states):

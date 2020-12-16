@@ -12,16 +12,23 @@ class CellAuto():
                 self.grid[r][c] = self.init_cell( (r,c) )
 
     def init_cell(self, coordinates):
+        # coordinates is a (row, column) tuple
+        # should return initial state of the cell at that coordinate
         print("Abstract Method")
         assert False
 
     def update_cell(self, coordinates, current_state, neighbor_states):
+        # coordinates is a (row, column) tuple
+        # current_state is the value in that coordinate's cell
+        # neighbor_states is a dictionary of the neighbors where the key is
+        #   the coordinates, and the value is the value in that neighbor cell
         print("Abstract Method")
         assert False
 
     def get_neighbors(self, coordinates):
         r, c = coordinates
         neighbors = {}
+
         # get the above three and below three
         for i in range(-1, 2): # -1, 0, 1
             if r-1 >= 0 and c+i >= 0 and c+i < self.num_cols:
@@ -38,6 +45,7 @@ class CellAuto():
         return neighbors
 
     def update(self):
+        # call the update_cell function on each cell
         next_grid = [[None]*self.num_cols for i in range(self.num_rows)]
         for r in range(self.num_rows):
             for c in range(self.num_cols):
