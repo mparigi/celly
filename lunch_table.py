@@ -26,10 +26,11 @@ class LunchTable(CellAuto):
         else:
             new_money = money + 1
 
+        new_happiness = money + hunger - ceil(average_neighbor_hunger)
+
         neighbor_happy_count = len([s[1] for s in neighbor_states.values() if s[1] > 0])
         new_hunger = clip(neighbor_happy_count - money, 10)
 
-        new_happiness = money + hunger - ceil(average_neighbor_hunger)
 
         return (new_money, new_happiness, new_hunger)
 
