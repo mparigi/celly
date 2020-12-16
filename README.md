@@ -1,6 +1,7 @@
 # celly
 A simple cellular automata library in vanilla Python.
 
+Initially created by Makarand Parigi.
 
 ## Setup
 Written for Python3. Install the requirements with `pip install -r requirements.txt`. To quickly test it out, run the `test_run.py` file like `python test_run.py`.
